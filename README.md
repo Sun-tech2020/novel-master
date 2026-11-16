@@ -2,28 +2,6 @@
 
 全流程中文商业小说与短篇故事写作单一总控智能体系统。
 
-## 系统架构
-
-本系统采用三层解耦架构：
-
-```mermaid
-flowchart TD
-    User["创作者 / 用户"] --> Master["小说总控 (novel-master)"]
-    Master --> Presets["中层：可插拔题材风格库"]
-    Presets --> F1["古言换亲替嫁"]
-    Presets --> F2["古言假死死遁"]
-    Presets --> F3["古言信息差觉醒"]
-    Presets --> F4["古言市井美食"]
-    Presets --> F5["官场智斗悬疑"]
-    Master --> Engines["底层：六大解耦原子引擎"]
-    Engines --> E1["架构策划 (novel-worldbuilding)"]
-    Engines --> E2["正文执笔 (novel-prose)"]
-    Engines --> E3["毒舌审校 (novel-review)"]
-    Engines --> E4["章节归档 (novel-archiving)"]
-    Engines --> E5["考据推演 (novel-research)"]
-    Engines --> E6["记忆存取 (novel-memory)"]
-```
-
 ## 核心设计特性
 
 1. **商业节拍控制**：内置 8 步商用节拍表（Beat Sheet）与 3000 字前置双付费卡点机制。
