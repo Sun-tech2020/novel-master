@@ -1,57 +1,105 @@
-# 📚 小说工业化创作双轨智能体体系 (Novel Master 4.0)
+# 📚 Novel Master: Professional Fiction Writing AI Agent System
+# 小说全流程双轨工业化创作智能体体系 (Novel Master 4.0)
 
-> **版本发布**：v4.0 双轨总控架构（长篇连载总控 + 短篇高爆总控）  
-> **核心突破**：彻底解耦“长篇连载”与“短篇神反转”，实现顶层双入口独立调度与各自专属的工业化标准 SOP。
+> **Zero-Setup · Pure Markdown Architecture · Multi-Agent SOP**  
+> Compatible with **Claude Code**, **Cursor**, **Windsurf**, **Copilot**, and 20+ AI Coding / Agent Environments.
 
 ---
 
-## 一、 顶层总控双轨架构
+## 🌟 Overview / 系统概述
 
-| 专区定位 | 顶层技能名 | 篇幅目标 | 核心流水线 | 适用平台 |
+**Novel Master** is an enterprise-grade fiction creation system specifically engineered for commercial web fiction and viral short stories. 
+Unlike typical free-form LLM writing prompts that hallucinate, lose long-term memory, or produce cliché AI-sounding prose, Novel Master implements a **rigorous industrial SOP (Standard Operating Procedure)** with forced human confirmation checkpoints at each milestone.
+
+**Novel Master** 是专为商业网络小说与高爆短篇故事打造的专业级工业化创作系统。
+彻底告别传统 AI 写作中常见的“剧情注水、战力崩塌、中途遗忘设定、八股AI机械味”等顽疾，采用**分阶段强制人机协同确认卡点机制**，实现高完成度、高追读率的精品商业创作。
+
+---
+
+## 🚀 Dual-Track Architecture / 长短篇双轨总控
+
+| Track / 专区 | Agent Command / 触发指令 | Target Length / 目标篇幅 | Core Pipeline / 核心流水线 | Target Platforms / 适用平台 |
 | :--- | :--- | :--- | :--- | :--- |
-| **📕 短篇专区** | `novel-short-master` | 8,000 ~ 15,000 字（单篇完结） | 选题挖掘 ➔ 核心梗裂变与100字宣发案 ➔ 200~400字黄金导语 ➔ 4000字卡点单篇大纲 ➔ 8k~12k高密度正文 | 知乎盐选、番茄短故事、公众号/小红书推文 |
-| **📘 长篇专区** | `novel-long-master` | 30 万 ~ 200 万字+（长线连载） | 长线卖点与金手指 ➔ 世界观与战力矩阵 ➔ 黄金前三章破局 ➔ 百万字分卷与前30章章纲 ➔ 分章连载执笔 (挂载伏笔台账与状态机) | 起点中文网、番茄连载、纵横、晋江 |
+| **📕 Short Fiction<br>短篇小说总控** | `novel-short-master`<br>*(写短篇 / 短篇总控)* | **8,000 ~ 15,000 words**<br>(Single Chapter Single Story) | 1. Topic & 3-Sentence Card<br>2. Hook & 100-Word Promo Copy<br>3. 200~400 Word Golden Lead Hook<br>4. 4000-Word Paywall Outline & 5 Checks<br>5. High-Density Anti-AI Prose | Zhihu Yansuan (知乎盐选), Fanqie Stories (番茄短故事), WeChat/Xiaohongshu Articles |
+| **📘 Long Web Novel<br>长篇小说总控** | `novel-long-master`<br>*(写长篇 / 长篇总控)* | **300,000 ~ 2,000,000+ words**<br>(Multi-Volume Serialization) | 1. Long-term Selling Points & Cheat System<br>2. Worldbuilding & 9~12 Power Tiers<br>3. Golden 3-Chapter Opening Breakdown<br>4. Multi-Volume Blueprint & Chapter Outlines<br>5. Serialized Writing (2k-3k words/ch) + Foreshadowing Ledger & State Machine | Qidian (起点中文网), Fanqie Serialization (番茄小说), Jinjiang (晋江), Zongheng (纵横) |
 
 ---
 
-## 二、 目录结构导航
+## 🛠️ Key Innovations / 核心技术突破
+
+### 1. Zero-Setup & Zero-Dependency (零配置即用)
+- 100% pure Markdown and structured prompt protocols (`SKILL.md`).
+- **No external Python dependencies, no local network scraper setup required.** Works instantly inside any standard Agent sandbox.
+
+### 2. Forced Human-in-the-Loop Checkpoints (强制人机卡点)
+- AI never runs ahead blindly. At every critical stage (topic, hook, lead, outline), the system pauses and waits for author approval before moving forward.
+
+### 3. Anti-AI Detection Rules (严格抗 AI 检测军规)
+- Enforces strict stylistic bans against typical LLM hallmarks:
+  - ❌ No triple-negative parallel sentences (*"没有愤怒，没有慌乱，甚至连..."*);
+  - ❌ No exposition dumps through dialogue;
+  - ❌ No disposable NPCs reading legal/contract rulebooks to the reader;
+  - ❌ No checklist-style physiological declarations (*"冷汗浸透后背"*).
+
+### 4. Long-Novel State Machine & Foreshadowing Ledger (长篇状态机与防崩账本)
+- Automatically tracks protagonist cultivation tier, inventory, and faction relationships per chapter.
+- Maintains a dedicated Foreshadowing Ledger (伏笔台账) to prevent forgotten plot holes over millions of words.
+
+---
+
+## 📂 Repository Structure / 仓库目录结构
 
 ```text
-AI智能体技能库/
 ├── 短篇专区 (novel-short)
-│   ├── SKILL.md                 # 短篇顶层技能总控 (novel-short-master)
-│   ├── 短篇_总控中枢.md          # 短篇 SOP 调度与人工确认卡点规范
-│   ├── 短篇_选题挖掘.md          # 四大平台真实热搜爬虫 + 大模型批量定制三句话卡
-│   ├── 短篇_核心梗裂变.md        # 四维解构、三向故事裂变与100字宣发短案
-│   ├── 短篇_导语创作.md          # 200~400字黄金导语（流量门面与反差钩子）
-│   ├── 短篇_单篇大纲.md          # 4000字“将爽未爽”卡点大纲与5大因果自检
-│   ├── 短篇_正文执笔.md          # 8k~12k字高密度爆发执笔
-│   └── 短篇_毒舌审校.md          # 短篇付费卡点与朱雀AI检测防火墙
+│   ├── SKILL.md                 # Short Fiction Master Agent (novel-short-master)
+│   ├── 短篇_总控中枢.md          # 5-Stage Short Fiction SOP & Workflow
+│   ├── 短篇_选题挖掘.md          # Topic Curation & 3-Sentence Event Card
+│   ├── 短篇_核心梗裂变.md        # 4D Event Deconstruction & 100-Word Promo Copy
+│   ├── 短篇_导语创作.md          # 200~400 Word Golden Lead Hook
+│   ├── 短篇_单篇大纲.md          # 4000-Word Cliffhanger Outline & 5 Causality Checks
+│   ├── 短篇_正文执笔.md          # 8k~12k Word High-Density Prose
+│   └── 短篇_毒舌审校.md          # Commercial Review & Anti-AI Audit
 │
 ├── 长篇专区 (novel-long)
-│   ├── SKILL.md                 # 长篇顶层技能总控 (novel-long-master)
-│   ├── 长篇_总控中枢.md          # 长篇长线连载调度规范
-│   ├── 长篇_卖点与金手指.md      # 赛道定位、金手指输入/处理/产出模型与终极动机
-│   ├── 长篇_世界观与战力.md      # 9~12阶境界质变体系、换地图阶梯与人物谱系
-│   ├── 长篇_黄金前三章.md        # 破局三章法则（危机觉醒 ➔ 借力破局 ➔ 打脸留钩）
-│   ├── 长篇_分卷与章纲.md        # 5~6卷分卷大纲、阶段性大高潮与前30章逐章章纲
-│   ├── 长篇_连载执笔.md          # 2000~3000字单章执笔与章末四大断章神技
-│   ├── 长篇_伏笔台账.md          # 伏笔生命周期登记与防太监追踪表
-│   ├── 长篇_长程记忆与状态机.md  # 主角实时战力/道具/人际状态快照防吃设定
-│   └── 长篇_连载审校.md          # 追读留存、注水率与战力平衡审校
+│   ├── SKILL.md                 # Long Novel Master Agent (novel-long-master)
+│   ├── 长篇_总控中枢.md          # Long Serialization SOP & Milestone Control
+│   ├── 长篇_卖点与金手指.md      # Golden Finger Mechanism & Long-term Motivation
+│   ├── 长篇_世界观与战力.md      # 9~12 Cultivation Tier Matrix & Faction Maps
+│   ├── 长篇_黄金前三章.md        # Golden 3-Chapter Breaking Opening Guide
+│   ├── 长篇_分卷与章纲.md        # Multi-Volume Blueprint & Chapter Outlines
+│   ├── 长篇_连载执笔.md          # 2k~3k Word Chapter Writing & 4 Cliffhanger Skills
+│   ├── 长篇_伏笔台账.md          # Foreshadowing Lifecycle Tracking Ledger
+│   ├── 长篇_长程记忆与状态机.md  # Dynamic State Snapshot & Memory Engine
+│   └── 长篇_连载审校.md          # Reader Retention & Pacing Quality Audit
 │
-└── 通用资源 (shared)
-    ├── 抗AI检测军规.md           # 抗朱雀AI检测军规（彻底消除4大机械八股）
-    ├── 考据推演引擎.md           # 现实逻辑、专业知识与法理细节考据
-    ├── 题材风格库/               # 古言、官场、都市、修仙等流派通用资产
-    └── scripts/
-        └── hot_topics_curator.py # 全网四大平台真实热点爬虫与大模型批量生成脚本
+├── 通用资源 (shared)
+│   ├── 抗AI检测军规.md           # Anti-AIGC Stylistic Writing Guide
+│   ├── 考据推演引擎.md           # Fact-checking & Logical Deduction Engine
+│   └── 题材风格库/               # Curated Sub-Genre Style Guides
+│
+├── SKILL.md                     # Universal Router Entry (novel-master)
+└── README.md                    # System Documentation
 ```
 
 ---
 
-## 三、 使用方法
+## ⚡ Quick Start / 快速开始
 
-创作者无需记忆复杂命令，直接在对话框输入自然语言即可激活：
-- **写短篇**：输入 `短篇小说总控` 或 `写短篇`；
-- **写长篇**：输入 `长篇小说总控` 或 `写长篇`。
+### Installation in Agent Tools / 安装方式
+
+1. **Claude Code / Cursor / Windsurf / Antigravity**:
+   Clone or copy this repository into your agent's skills directory:
+   ```bash
+   git clone https://github.com/Sun-tech2020/novel-master.git ~/.gemini/config/skills/novel-master
+   ```
+
+2. **Triggering in Chat / 对话呼叫**:
+   - To write a short viral story: type **`短篇小说总控`** or **`write short story`**
+   - To plan a serialized novel: type **`长篇小说总控`** or **`write long novel`**
+
+---
+
+## 📄 License & Attribution
+
+- Author: [Zhuoqun Sun (Scott Sun)](https://github.com/Sun-tech2020)
+- License: MIT License - free for commercial and personal usage.
